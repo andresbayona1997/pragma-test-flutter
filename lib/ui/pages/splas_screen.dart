@@ -9,20 +9,45 @@ class SplashScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsApp.mainBackground,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Pragma",
-            style: TextStyles.mainTitlePurple,),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10)
+      body: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text(
+                  'Pragma',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
               ),
-              child: Image.network('https://cdn2.thecatapi.com/images/cZHbIzC_l.jpg'),
-            )
-          ],
-        ),
+              Center(
+                child: Text(
+                  'Catbreeds',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 20),
+              child: Image.asset(
+                'assets/pink-cat.png',
+                width: 200,
+                height: 200,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
